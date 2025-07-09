@@ -295,9 +295,12 @@ public class JdkCompiler extends AbstractCompiler {
         try {
             Class<?> clazz = doCompile(testName, sourceCode);
             System.out.println("Compilation successful. Class: " + clazz);
-            1 / 0;
+            int s = 1 / 0;
+            System.out.println(s);
         } catch (Exception e) {
             e.printStackTrace();
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
         }
     }
 
